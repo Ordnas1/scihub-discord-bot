@@ -1,0 +1,41 @@
+{
+  "name": "scihub-bot",
+  "version": "1.0.0",
+  "description": "Scihub discord bot. Fetches papers from scihub using the DOI",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ordnas1/scihub-discord-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "scihub",
+    "bot",
+    "discord-bot"
+  ],
+  "author": "Sandro Marcelo Peirano Gozalvez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ordnas1/scihub-discord-bot/issues"
+  },
+  "homepage": "https://github.com/Ordnas1/scihub-discord-bot#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.0",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "*",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0"
+  }
+}
