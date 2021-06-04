@@ -1,20 +1,20 @@
-import * as Discord from "discord.js";
-
+import DiscordManager from "./clientManager";
+import loadCommands from "./commands";
 import Config from "./utils/config";
 import { parseCommands } from "./utils/helpers";
 
-const client = new Discord.Client();
+const Manager = new DiscordManager();
 
-client.once("ready", () => {
+// Initialize any async logic required for bot here
+Manager.client.once("ready", async () => {
+  Manager.commands = await loadCommands();
+
   console.log("Ready!");
 });
 
-client.on("message", (message) => {
+Manager.client.on("message", (message) => {
   const { command, args } = { ...parseCommands(message) };
-
-  if (command === "fetch") {
-    message.channel.send(`Fetch paper with DOI ${args}`);
-  }
+  if (!args) return;
 });
 
-client.login(Config.token);
+Manager.client.login(Config.token);

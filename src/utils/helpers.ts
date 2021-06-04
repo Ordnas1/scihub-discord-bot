@@ -9,7 +9,7 @@ export const parseCommands = (
   const args = message.content.slice(Config.prefix.length).trim().split(" ");
   const command = args.shift()?.toLowerCase();
 
-  if (!command || !args) return;
+  if (!command || !args) throw new Error("Command not found");
 
   return { command, args };
 };

@@ -1,10 +1,10 @@
-import ICommand from "../types/commands.interface";
+import Command from "../types/commands.interface";
 
-const fetch: ICommand = {
+const fetch: Command = {
   name: "fetch",
   description: "Fetches a paper from scihub",
   execute(message, args): void {
-    console.log(message, args);
+    console.log(message.author, args);
   },
 };
 
