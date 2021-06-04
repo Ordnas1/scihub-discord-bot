@@ -12,9 +12,17 @@ Manager.client.once("ready", async () => {
   console.log("Ready!");
 });
 
-Manager.client.on("message", (message) => {
+Manager.client.on("message", async (message) => {
   const { command, args } = { ...parseCommands(message) };
-  if (!args) return;
+  if (!args || !command) return;
+  if (!Manager.commands.has(command)) return;
+
+  try {
+    await Manager.commands.get(command)?.execute(message, args);
+  } catch (error) {
+    console.error(error);
+    message.reply("There was an error while trying to execute the command");
+  }
 });
 
 Manager.client.login(Config.token);
