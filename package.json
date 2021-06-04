@@ -2,10 +2,11 @@
   "name": "scihub-bot",
   "version": "1.0.0",
   "description": "Scihub discord bot. Fetches papers from scihub using the DOI",
-  "main": "index.js",
+  "main": "src/app.ts",
   "scripts": {
     "build": "tsc --build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development ts-node-dev --respawn src/app.ts"
   },
   "repository": {
     "type": "git",
@@ -24,12 +25,14 @@
   },
   "homepage": "https://github.com/Ordnas1/scihub-discord-bot#readme",
   "devDependencies": {
+    "@types/node": "^15.12.0",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "prettier": "^2.3.0",
+    "ts-node-dev": "^1.1.6",
     "typescript": "^4.3.2"
   },
   "dependencies": {
