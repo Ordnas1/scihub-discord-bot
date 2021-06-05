@@ -1,12 +1,16 @@
 {
   "name": "scihub-bot",
+  "engines": {
+    "node": "14.x"
+  },
   "version": "1.0.0",
   "description": "Scihub discord bot. Fetches papers from scihub using the DOI",
   "main": "src/app.ts",
   "scripts": {
-    "start":"node dist/app.js",
-    "prebuild":"rm -rf ./dist",
+    "prebuild": "rm -rf ./dist",
     "build": "tsc --build",
+    "prestart": "npm run build",
+    "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV=development ts-node-dev --respawn src/app.ts",
     "lint": "eslint --ext .ts"
