@@ -7,6 +7,7 @@
   "description": "Scihub discord bot. Fetches papers from scihub using the DOI",
   "main": "src/app.ts",
   "scripts": {
+    "tsc": "tsc",
     "prebuild": "rm -rf ./dist",
     "build": "tsc --build",
     "prestart": "npm run build",
