@@ -4,6 +4,8 @@
   "description": "Scihub discord bot. Fetches papers from scihub using the DOI",
   "main": "src/app.ts",
   "scripts": {
+    "start":"node dist/app.js",
+    "prebuild":"rm -rf ./dist",
     "build": "tsc --build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV=development ts-node-dev --respawn src/app.ts",

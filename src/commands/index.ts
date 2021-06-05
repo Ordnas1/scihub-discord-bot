@@ -13,8 +13,8 @@ interface DefaultCommandImport {
 
 const loadCommands = async () => {
   const commandFiles = await (
-    await asyncGlob(`${__dirname}/*.ts`)
-  ).filter((file) => !file.includes("index.ts"));
+    await asyncGlob(`${__dirname}/*.{js, ts}`)
+  ).filter((file) => !file.includes("index.ts") && !file.includes("index.js"));
 
   const commands = new Collection<unknown, Command>();
 
@@ -24,7 +24,6 @@ const loadCommands = async () => {
     )) as DefaultCommandImport;
     commands.set(command.default.name, command.default);
   }
-
   return commands;
 };
 

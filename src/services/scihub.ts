@@ -5,7 +5,7 @@ const getPaper = async (DOI: string[]): Promise<any> => {
     const request = await axios.get(`https://sci-hub.do/${DOI[0]}`);
     return request.data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 

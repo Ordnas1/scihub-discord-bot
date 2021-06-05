@@ -8,15 +8,13 @@ const fetch: Command = {
   execute: async (message, args): Promise<void> => {
     try {
       message.channel.send(`Fetching document with DOI ${args[0]}`);
-      console.log(message.author, args);
 
       const data = await SciHubService.getPaper(args);
-      console.log(data);
       const downloadLink = ScrappingService.getDownloadLink(data);
 
       message.channel.send(`Link found: ${downloadLink}`);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       message.channel.send("An unexpect error occurred while fetching");
     }
   },
