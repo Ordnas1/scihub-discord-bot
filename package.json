@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV=development ts-node-dev --respawn src/app.ts",
     "lint": "eslint --ext .ts",
-    "postinstall": "tsc",
+    "postinstall": "npm run tsc -- --build",
     "deploy": "git add -A && git commit -m Heroku && git push heroku master"
   },
   "repository": {
