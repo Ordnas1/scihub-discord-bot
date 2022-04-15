@@ -14,7 +14,9 @@ Manager.client.once("ready", async () => {
 
 Manager.client.on("message", async (message) => {
   const { command, args } = { ...parseCommands(message) };
+  console.log({ command, args });
   if (!args || !command) return;
+  console.log("Found args and command!");
   if (!Manager.commands.has(command)) return;
 
   try {

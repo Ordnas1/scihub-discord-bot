@@ -7,7 +7,9 @@ const fetch: Command = {
   description: "Fetches a paper from scihub",
   execute: async (message, args): Promise<void> => {
     try {
-      message.channel.send(`Fetching document with DOI ${args[0]}`);
+      const messageText = `Fetching document with DOI ${args[0]}`;
+      console.log(messageText);
+      message.channel.send(messageText);
 
       const data = await SciHubService.getPaper(args);
       const downloadLink = ScrappingService.getDownloadLink(data);
